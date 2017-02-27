@@ -8,74 +8,37 @@
 
 import Foundation
 
-struct Repository {
+struct Repository: JSONDecodable {
+
     let id: Int
     let name: String
     let fullName: String
     let owner: User
-    let privateF: Bool
-    let htmlUrl :String
-    let description: String
-    let fork: Bool
-    let url: String
-    let forksUrl: String
-    let keysUrl: String
-    let collaboratorsUrl: String
-    let teamsUrl: String
-    let hooksUrl: String
-    let issueEventsUrl: String
-    let eventsUrl: String
-    let assgineesUrl: String
-    let branchesUrl: String
-    let tagsUrl: String
-    let blobsUrl: String
-    let gitTagsUrl: String
-    let gitRefsUrl: String
-    let treesUrl: String
-    let statusesUrl: String
-    let languagesUrl: String
-    let stragazersUrl: String
-    let contributorsUrl: String
-    let subscribersUrl: String
-    let subscriptionUrl: String
-    let commitsUrl: String
-    let gitCommitsUrl: String
-    let commentsUrl: String
-    let issueCommentUrl: String
-    let contentsUrl: String
-    let compareUrl: String
-    let mergesUrl: String
-    let ArchiveUrl: String
-    let downloadsUrl: String
-    let issuesUrl: String
-    let pullsUrl: String
-    let milestonesUrl: String
-    let notificationsUrl: String
-    let labelsUrl: String
-    let releasesUrl: String
-    let deploymentsUrl: String
-    let createdAt: String
-    let updatedAt: String
-    let pushedAt: String
-    let gitUrl: String
-    let sshUrl: String
-    let cloneUrl: String
-    let svnUrl: String
-    let homepage: String
-    let size: Int
-    let stargazersCount: Int
-    let watchersCount: Int
-    let language: String
-    let hasIssues: Bool
-    let hasDownloads: Bool
-    let hasWiki: Bool
-    let hasPages: Bool
-    let forksCount: Int
-    let mirrorUrl: String
-    let openIssuesCount: Int
-    let forks: Int
-    let openIssues: Int
-    let watchers: Int
-    let defaultBranch: String
-    let score: Int
+
+    init(json: Any) throws {
+        guard let dictionary = json as? [String : Any] else {
+            throw JSONDecodeError.invalidFormat(json: json)
+        }
+
+        guard let id = dictionary["id"] as? Int else {
+            throw JSONDecodeError.missingValue(key: "id", actualValue: dictionary["id"])
+        }
+
+        guard let name = dictionary["name"] as? String else {
+            throw JSONDecodeError.missingValue(key: "name", actualValue: dictionary["name"])
+        }
+
+        guard let fullName = dictionary["full_name"] as? String else {
+            throw JSONDecodeError.missingValue(key: "full_name", actualValue: dictionary["full_name"])
+        }
+
+        guard let ownerObject = dictionary["owner"] else {
+            throw JSONDecodeError.missingValue(key: "owner", actualValue: dictionary["owner"])
+        }
+
+        self.id = id
+        self.name = name
+        self.fullName = fullName
+        self.owner = try User(json: ownerObject)
+    }
 }
