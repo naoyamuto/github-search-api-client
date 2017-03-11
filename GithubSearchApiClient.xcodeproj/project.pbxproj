@@ -81,21 +81,45 @@
 		6E2CADE21E63D72D0090276B /* GithubSearchApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				6E9EA3041E74A09600D540D9 /* Error */,
+				6E9EA3031E74A08C00D540D9 /* Response */,
+				6E9EA3021E74A08500D540D9 /* Request */,
 				6E2CADE31E63D72D0090276B /* main.swift */,
-				6E2CADEA1E63D8370090276B /* User.swift */,
-				6E2CADEC1E63DA750090276B /* Repository.swift */,
-				B2C139E21E71140A00ACBAD0 /* GitHubClient.swift */,
-				B257E2661E64466A0091806F /* JSONDecodeError.swift */,
-				B257E2681E644A650091806F /* JSONDecodable.swift */,
-				B2193C301E6F04DE004D84B4 /* SearchResponse.swift */,
-				B2193C341E6F0889004D84B4 /* GitHubClientError.swift */,
-				B2193C361E6F0941004D84B4 /* GitHubAPIError.swift */,
-				B2193C381E6F0DB1004D84B4 /* GitHubRequest.swift */,
-				B2193C3A1E6F0E6A004D84B4 /* HTTPMethod.swift */,
-				B2193C3C1E6F10A9004D84B4 /* GitHubAPI.swift */,
-				B2C139E41E7114B600ACBAD0 /* Result.swift */,
 			);
 			path = GithubSearchApiClient;
+			sourceTree = "<group>";
+		};
+		6E9EA3021E74A08500D540D9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B2193C3C1E6F10A9004D84B4 /* GitHubAPI.swift */,
+				B2C139E21E71140A00ACBAD0 /* GitHubClient.swift */,
+				B2193C381E6F0DB1004D84B4 /* GitHubRequest.swift */,
+				B2193C3A1E6F0E6A004D84B4 /* HTTPMethod.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		6E9EA3031E74A08C00D540D9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				6E2CADEA1E63D8370090276B /* User.swift */,
+				6E2CADEC1E63DA750090276B /* Repository.swift */,
+				B257E2681E644A650091806F /* JSONDecodable.swift */,
+				B2193C301E6F04DE004D84B4 /* SearchResponse.swift */,
+				B2C139E41E7114B600ACBAD0 /* Result.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		6E9EA3041E74A09600D540D9 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				B2193C341E6F0889004D84B4 /* GitHubClientError.swift */,
+				B257E2661E64466A0091806F /* JSONDecodeError.swift */,
+				B2193C361E6F0941004D84B4 /* GitHubAPIError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
