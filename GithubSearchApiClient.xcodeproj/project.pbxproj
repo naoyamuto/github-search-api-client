@@ -81,9 +81,9 @@
 		6E2CADE21E63D72D0090276B /* GithubSearchApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				6E9EA3041E74A09600D540D9 /* Error */,
-				6E9EA3031E74A08C00D540D9 /* Response */,
 				6E9EA3021E74A08500D540D9 /* Request */,
+				6E9EA3031E74A08C00D540D9 /* Response */,
+				6E9EA3041E74A09600D540D9 /* Error */,
 				6E2CADE31E63D72D0090276B /* main.swift */,
 			);
 			path = GithubSearchApiClient;
